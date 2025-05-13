@@ -10,5 +10,17 @@
         "email": "ekeulasi@yahoo.co.uk",
         "otherguests": "0",
         "attending": true
+    },
+    {
+        "name": "Laura Latham",
+        "email": "lauralatham@gmail.com",
+        "otherguests": "0",
+        "attending": false
+    },
+    {
+        "name": "Sally Studley",
+        "email": "sallys@live.com",
+        "otherguests": "2",
+        "attending": true
     }
 ]

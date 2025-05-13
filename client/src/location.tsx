@@ -13,9 +13,9 @@ export default function Address() {
         <div className="address">
           <p className="left">Where:</p>
           <ul className="right">
-            <li>Learie Constantine Centre </li>
-            <li>DolliS Hill</li>
-            <li> NW2 5PU</li>
+            <li>Learie Constantine Centre or Churchend & Roundwood Unity Centre (precise location TBC) </li>
+            <li>Dollis Hill/ Church Road Harlesden</li>
+            <li> NW2 5PU/ NW10 9EG</li>
           </ul>
         </div>
 

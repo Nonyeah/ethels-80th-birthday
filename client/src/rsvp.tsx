@@ -16,10 +16,10 @@ function RSVP() {
   const messageRef = useRef<HTMLParagraphElement | null>(null);
 
   function send(e: React.FormEvent<HTMLFormElement>){
+    const defaultText = "Enter your full name";
     e.preventDefault();
-    if(!accept && !reject) {
-      messageRef.current!.innerHTML = "Please accept or decline the invitaion by clicking the \
-      relevant button";
+    if(!accept && !reject || !fullname || fullname === defaultText ) {
+      messageRef.current!.innerHTML = "Please complete all form fields";
       return false;
     }
     const attendanceObject: AttendanceObject = {
@@ -48,7 +48,7 @@ function RSVP() {
         setreject(false);
         messageRef.current!.classList.remove("message");
         messageRef.current!.innerHTML = "";
-      }, 8000))
+      }, 10000))
       .catch((err) => {
         messageRef.current!.textContent = `Hmmm, seems like there's 
         a tech problem: ${err}. Please try again later`;
@@ -80,6 +80,7 @@ function RSVP() {
   return (
     <form onSubmit={send}>
       <div className="form-container">
+         <p id="browser-message" ref={messageRef}></p>
         <h2>RSVP</h2>
 
         <div className="form-name">
@@ -153,7 +154,7 @@ function RSVP() {
           Submit
         </button>
       </div>
-      <p ref={messageRef}></p>
+     
     </form>
   );
 }
