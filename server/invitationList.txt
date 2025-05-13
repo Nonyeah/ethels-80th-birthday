@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Nonye Ulasi",
+        "email": "nonyeulasi@hotmail.com",
+        "otherguests": "1",
+        "attending": true
+    },
+    {
+        "name": "Eke Ulasi",
+        "email": "ekeulasi@yahoo.co.uk",
+        "otherguests": "0",
+        "attending": true
+    }
+]
