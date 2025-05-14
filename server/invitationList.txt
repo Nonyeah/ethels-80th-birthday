@@ -34,5 +34,11 @@
         "email": "sarah_C@hotmail.com",
         "otherguests": "3",
         "attending": true
+    },
+    {
+        "name": "Dr Wilson Onyeka",
+        "email": "willie0_65@gmail.com",
+        "otherguests": "2",
+        "attending": true
     }
 ]
