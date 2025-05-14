@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 
 interface AttendanceObject {
-  name: string,
-  email: string,
-  otherguests: string,
-  attending: boolean
+  name: string;
+  email: string;
+  otherguests: string;
+  attending: boolean;
 }
 
 function RSVP() {
@@ -15,11 +15,12 @@ function RSVP() {
   const [reject, setreject] = useState<boolean>(false);
   const messageRef = useRef<HTMLParagraphElement | null>(null);
 
-  function send(e: React.FormEvent<HTMLFormElement>){
+  function send(e: React.FormEvent<HTMLFormElement>) {
     const defaultText = "Enter your full name";
     e.preventDefault();
-    if(!accept && !reject || !fullname || fullname === defaultText ) {
-      messageRef.current!.innerHTML = "Please complete all form fields and don't forget \
+    if ((!accept && !reject) || !fullname || fullname === defaultText) {
+      messageRef.current!.innerHTML =
+        "Please complete all form fields and don't forget \
       to click the accept or reject button";
       return false;
     }
@@ -27,9 +28,8 @@ function RSVP() {
       name: fullname,
       email: email,
       otherguests: otherguests,
-      attending: accept ? true : false
-    }
-    
+      attending: accept ? true : false,
+    };
 
     fetch("http://localhost:3000", {
       method: "POST",
@@ -39,17 +39,19 @@ function RSVP() {
       .then((response: Response) => response.text())
       .then((data: string) => {
         messageRef.current!.innerHTML = data;
-        messageRef.current!.classList.add("message")
+        messageRef.current!.classList.add("message");
       })
-      .then(() => setTimeout(() => {
-        setfullname("");
-        setemail("");
-        setotherguests("0"); 
-        setaccept(false);
-        setreject(false);
-        messageRef.current!.classList.remove("message");
-        messageRef.current!.innerHTML = "";
-      }, 10000))
+      .then(() =>
+        setTimeout(() => {
+          setfullname("");
+          setemail("");
+          setotherguests("0");
+          setaccept(false);
+          setreject(false);
+          messageRef.current!.classList.remove("message");
+          messageRef.current!.innerHTML = "";
+        }, 10000)
+      )
       .catch((err) => {
         messageRef.current!.textContent = `Hmmm, seems like there's 
         a tech problem: ${err}. Please try again later`;
@@ -81,7 +83,7 @@ function RSVP() {
   return (
     <form onSubmit={send}>
       <div className="form-container">
-         <p id="browser-message" ref={messageRef}></p>
+        <p id="browser-message" ref={messageRef}></p>
         <h2>RSVP</h2>
 
         <div className="form-name">
@@ -155,7 +157,6 @@ function RSVP() {
           Submit
         </button>
       </div>
-     
     </form>
   );
 }

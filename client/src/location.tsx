@@ -7,7 +7,7 @@ export default function Address() {
         
         <div className="time">
           <p className="left">Time</p>
-          <p className="right">4pm to 9.45pm</p>
+          <p className="right">5pm to 11pm</p>
         </div>
 
         <div className="address">

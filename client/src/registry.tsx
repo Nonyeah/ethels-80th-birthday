@@ -3,15 +3,15 @@ function Registry(){
     return (
 <section className="registry">
     <h2>your presence is a gift</h2>
-    <p>Having amazing family and friends in our lives is the best gift of all. 
+    <p>Having amazing family and friends to celebrate with is the best gift of all. 
         However, if you wish to honor Ethel with a gift then vouchers 
-        from the following stores would put a huge smile on her face</p>
+        from the following stores would put a huge smile on her face:</p>
 
         <ul>
             <li>Westfield</li>
             <li>Boots</li>
             <li>Holland & Barrett</li>
-            <li>Amazon.com</li>
+            <li>John Lewis</li>
             <li>Marks & Spencers</li>
         </ul>
 </section>

@@ -17,7 +17,7 @@ export default function Intro() {
       </p>
       <p>
         Come join us as we celebrate! Let's eat some delicious food, drink until
-        we are merry and <p><span>DANCE, DANCE, DANCE!</span></p>
+        we are merry and <p><span>DANCE DANCE DANCE!</span></p>
       </p>
     </div>
   );
