@@ -22,5 +22,11 @@
         "email": "sallys@live.com",
         "otherguests": "2",
         "attending": true
+    },
+    {
+        "name": "Daniel Ulasi",
+        "email": "danielulasi@yahoo.co.uk",
+        "otherguests": "2",
+        "attending": true
     }
 ]

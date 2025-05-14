@@ -19,7 +19,8 @@ function RSVP() {
     const defaultText = "Enter your full name";
     e.preventDefault();
     if(!accept && !reject || !fullname || fullname === defaultText ) {
-      messageRef.current!.innerHTML = "Please complete all form fields";
+      messageRef.current!.innerHTML = "Please complete all form fields and don't forget \
+      to click the accept or reject button";
       return false;
     }
     const attendanceObject: AttendanceObject = {
