@@ -28,5 +28,11 @@
         "email": "danielulasi@yahoo.co.uk",
         "otherguests": "2",
         "attending": true
+    },
+    {
+        "name": "Sarah Connor",
+        "email": "sarah_C@hotmail.com",
+        "otherguests": "3",
+        "attending": true
     }
 ]
