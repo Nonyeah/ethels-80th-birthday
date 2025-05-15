@@ -216,8 +216,9 @@ input {
   border: none;
   outline: none;
   font: 0.8rem arial;
-  margin: 30px;
+  margin: 30px 20px;
   width: 25%;
+  height: 60px;
   background-color: #d8d3d6;
   cursor: pointer;
 }
@@ -259,12 +260,10 @@ p#browser-message {
   width: 80%;
 }
 
-.response-buttons button,
-#submit {
+.response-buttons button, #submit
+ {
   font: 0.8rem arial;
+  width: 80%;
 }
 
-.response-buttons #submit{
-width: 80%;
-}
 }
