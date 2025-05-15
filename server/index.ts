@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-  origin: 'https://nonyeah.github.io/ethels-80th-birthday/',
+  origin: 'https://nonyeah.github.io',
   methods: ['GET', 'POST'],
 }));
 
