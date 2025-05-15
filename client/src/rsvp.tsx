@@ -31,7 +31,7 @@ function RSVP() {
       attending: accept ? true : false,
     };
 
-    fetch("http://localhost:3000", {
+    fetch("https://ethels-80th-birthday.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(attendanceObject),

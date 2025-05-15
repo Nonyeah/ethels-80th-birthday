@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://nonyeah.github.io/ethels-80th-birthday/'
 }));
 
 app.use(bodyParser.json());
