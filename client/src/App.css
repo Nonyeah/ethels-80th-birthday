@@ -257,13 +257,12 @@ p#browser-message {
   }
 
   input {
-  width: 80%;
-}
+    width: 80%;
+  }
 
-.response-buttons button, #submit
- {
-  font: 0.8rem arial;
-  width: 80%;
-}
-
+  .response-buttons button,
+  #submit {
+    font: 0.8rem arial;
+    width: 80%;
+  }
 }
