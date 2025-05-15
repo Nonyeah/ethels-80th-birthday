@@ -7,13 +7,13 @@ var app = (0, express_1.default)();
 var PORT = 3000;
 app.use((0, cors_1.default)());
 app.use((0, cors_1.default)({
-    origin: 'http://localhost:5173'
+    origin: 'https://nonyeah.github.io'
 }));
 // Middleware to parse URL-encoded form data
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json()); // to parse JSON requests
 // Handle form submission
-app.post('http://localhost:5173', function (req, res) {
+app.post('/', function (req, res) {
     console.log("Request body:", req.body);
     var _a = req.body, name = _a.name, email = _a.email, attending = _a.attending, otherGuests = _a.otherGuests;
     var _b = name.split(" "), firstName = _b[0], lastName = _b[1];
@@ -43,6 +43,6 @@ app.post('http://localhost:5173', function (req, res) {
     }
     ;
     app.listen(PORT, function () {
-        console.log("Server running at http://localhost:".concat(PORT));
+        console.log("Server running at https://ethels-80th-birthday.onrender.com:".concat(PORT));
     });
 });
