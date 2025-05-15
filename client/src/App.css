@@ -252,6 +252,19 @@ p#browser-message {
   }
 
   .form-others input {
-    width: 70%;
+    width: 80%;
   }
+
+  input {
+  width: 80%;
+}
+
+.response-buttons button,
+#submit {
+  font: 0.8rem arial;
+}
+
+.response-buttons #submit{
+width: 80%;
+}
 }
