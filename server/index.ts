@@ -1,9 +1,9 @@
+require("dotenv").config();
 import express from "express";
 import cors from "cors";
 import fs from "fs";
 import path from "path";
 import bodyParser from "body-parser";
-require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 const app = express();
