@@ -6,15 +6,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const body_parser_1 = __importDefault(require("body-parser"));
+require("dotenv").config();
+const nodemailer = require("nodemailer");
 const app = (0, express_1.default)();
 const PORT = 3000;
 app.use((0, cors_1.default)({
-    origin: 'https://nonyeah.github.io',
-    methods: ['GET', 'POST'],
+    origin: "https://nonyeah.github.io",
+    methods: ["GET", "POST"],
 }));
 app.use(body_parser_1.default.json());
-app.post('/', (req, res) => {
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.USERNAME,
+        pass: process.env.PASSWORD,
+    },
+});
+app.post("/", (req, res) => {
     console.log("Request body:", req.body);
     const { name, email, attending, otherguests } = req.body;
     const [firstName, lastName] = name.split(" ");
@@ -40,6 +50,24 @@ app.post('/', (req, res) => {
     else {
         res.send(`Awww that's a pity ${firstName}, we're sorry you can't make it.`);
     }
+    const mailOptions = {
+        from: process.env.USERNAME,
+        to: "nonyeulasi@hotmail.com",
+        subject: "Guest List",
+        text: "80th birthday party RSVP list",
+        attachments: [
+            {
+                filename: "invitationList.txt",
+                path: path_1.default.join(__dirname, "invitationList.txt"),
+            },
+        ],
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.error("Email failed:", error);
+        }
+        console.log("Email sent:", info.response);
+    });
 });
 app.listen(PORT, () => {
     console.log(`Server running at https://ethels-80th-birthday.onrender.com:${PORT}`);
