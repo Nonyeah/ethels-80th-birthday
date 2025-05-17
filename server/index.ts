@@ -6,7 +6,7 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import bodyParser from "body-parser";
-const nodemailer = require("nodemailer");
+import nodemailer, { SentMessageInfo } from "nodemailer";
 
 const app = express();
 const PORT = 3000;
@@ -93,7 +93,7 @@ app.post("/", (req, res) => {
     ],
   };
 
-  transporter.sendMail(mailOptions, (error: Error, info: any) => {
+  transporter.sendMail(mailOptions, (error: Error | null, info: any) => {
     if (error) {
       return console.error("Email failed:", error);
     }
