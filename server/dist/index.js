@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// @ts-ignore
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
@@ -10,7 +11,7 @@ const cors_1 = __importDefault(require("cors"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const body_parser_1 = __importDefault(require("body-parser"));
-const nodemailer = require("nodemailer");
+const nodemailer_1 = __importDefault(require("nodemailer"));
 const app = (0, express_1.default)();
 const PORT = 3000;
 app.use((0, cors_1.default)({
@@ -18,7 +19,7 @@ app.use((0, cors_1.default)({
     methods: ["GET", "POST"],
 }));
 app.use(body_parser_1.default.json());
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer_1.default.createTransport({
     service: "gmail",
     auth: {
         user: process.env.USERNAME,
