@@ -67,17 +67,13 @@ function RSVP() {
   }
 
   function handleAccept(): void {
-    if (!accept || reject) {
-      setaccept(true);
-      setreject(false);
-    }
+    setaccept(true);
+    setreject(false);
   }
 
   function handleReject(): void {
-    if (!reject || accept) {
-      setreject(true);
-      setaccept(false);
-    }
+    setreject(true);
+    setaccept(false);
   }
 
   return (
@@ -113,7 +109,6 @@ function RSVP() {
               value={email}
               onChange={(e) => setemail(e.target.value)}
               onFocus={handleEmailFocus}
-              required
             />
           </label>
         </div>
