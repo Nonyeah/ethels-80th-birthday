@@ -161,7 +161,7 @@ function RSVP() {
               onChange={(e) => {
                 if (otherguests) setotherguests(e.target.value);
               }}
-              required
+    
             />
           </label>
         </div>
