@@ -250,6 +250,27 @@ p#browser-message {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.show {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px 0;
+  background-color: #a8ecae;
+  height: 250px;
+  position: relative;
+  background-image: url(assets/blue-bg.jpg);
+}
+
+.show p{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #fff;
+font-size: 1.2rem;
+}
+
 @media screen and (max-width: 700px) {
   .fact-container .show-answer {
     width: 35%;
