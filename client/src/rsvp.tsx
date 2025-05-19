@@ -10,7 +10,7 @@ interface AttendanceObject {
 function RSVP() {
   const [fullname, setfullname] = useState<string>("Enter your full name");
   const [email, setemail] = useState<string>("Enter your email address");
-  const [otherguests, setotherguests] = useState<string | number >("0");
+  const [otherguests, setotherguests] = useState<string | number >("");
   const [accept, setaccept] = useState<boolean>(false);
   const [reject, setreject] = useState<boolean>(false);
   const messageRef = useRef<HTMLParagraphElement | null>(null);
@@ -62,7 +62,7 @@ function RSVP() {
         setTimeout(() => {
           setfullname("");
           setemail("");
-          setotherguests("0");
+          setotherguests("");
           setaccept(false);
           setreject(false);
           messageRef.current!.classList.remove("message");
@@ -158,11 +158,11 @@ function RSVP() {
               name="other"
               type="text"
               inputMode="numeric"
-              pattern="[0-9]*"
+              pattern="[0-9]{0,1}"
               value={otherguests}
               onChange={(e) => {
                 const guestNumber = e.target.value;
-                if (/^\d*$/.test(guestNumber)) {
+                if (/^\d{0,1}$/.test(guestNumber)) {
                   setotherguests(e.target.value);
                 }
               }}
