@@ -271,6 +271,15 @@ color: #fff;
 font-size: 1.2rem;
 }
 
+form.hideForm {
+  display:none;
+}
+
+form.showForm{
+  display: block;
+}
+
+
 @media screen and (max-width: 700px) {
   .fact-container .show-answer {
     width: 35%;
