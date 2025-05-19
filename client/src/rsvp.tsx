@@ -3,14 +3,14 @@ import { useState, useRef } from "react";
 interface AttendanceObject {
   name: string;
   email: string;
-  otherguests: string;
+  otherguests: string | number;
   attending: boolean;
 }
 
 function RSVP() {
   const [fullname, setfullname] = useState<string>("Enter your full name");
   const [email, setemail] = useState<string>("Enter your email address");
-  const [otherguests, setotherguests] = useState<string>("0");
+  const [otherguests, setotherguests] = useState<string | number >("0");
   const [accept, setaccept] = useState<boolean>(false);
   const [reject, setreject] = useState<boolean>(false);
   const messageRef = useRef<HTMLParagraphElement | null>(null);
@@ -156,12 +156,16 @@ function RSVP() {
             <input
               id="other"
               name="other"
-              type="number"
-              value={otherguests >= "0" ? otherguests : "0"}
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              value={otherguests}
               onChange={(e) => {
-                if (otherguests) setotherguests(e.target.value);
+                const guestNumber = e.target.value;
+                if (/^\d*$/.test(guestNumber)) {
+                  setotherguests(e.target.value);
+                }
               }}
-    
             />
           </label>
         </div>
