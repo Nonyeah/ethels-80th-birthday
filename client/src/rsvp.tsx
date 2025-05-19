@@ -24,6 +24,23 @@ function RSVP() {
       to click the accept or reject button";
       return false;
     }
+
+    const pattern = /[<\\>]/;
+    const refuse = fullname.match(pattern);
+    if (refuse) {
+      messageRef.current!.innerHTML =
+        "Only alpha numeric characters allowed. Please \
+       enter your name correctly";
+      return false;
+    }
+
+    if (fullname.length > 55) {
+      messageRef.current!.innerHTML =
+        "Your name is too long. Please only enter your first \
+     and surname";
+      return false;
+    }
+
     const attendanceObject: AttendanceObject = {
       name: fullname,
       email: email,

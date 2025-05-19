@@ -60,7 +60,7 @@ function CreateFacts({ id, question, answer }: FactData) {
   useEffect(() => {
     if (showanswer && answerRef.current) {
       const strArray: string[] = answer.split(" ");
-      let timerId: number;
+      let timerId: any;
       let i: number = 100;
       for (let word of strArray) {
         timerId = setTimeout(() => {
